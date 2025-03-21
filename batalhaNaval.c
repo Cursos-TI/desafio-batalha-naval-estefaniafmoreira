@@ -18,8 +18,24 @@ int main() {
     for (int i = 0; i < TAM_NAVIO; i++) {
         tabuleiro[linhaV + i][colunaV] = 3;
     }
+    
+    //4. Posicionar um navio na diágonal principal(canto superior esquerdo) 
+    int linhaD1 = 1, colunaD1 = 1;
+    for (int i = 0; i < TAM_NAVIO; i++){
+        if (linhaD1 + i < TAMANHO && colunaD1 + i < TAMANHO){
+           tabuleiro[linhaD1 + i] [colunaD1 + i] = 3;
+        }
+    }
+    
+    // 5. Posicionar um navio na diagonal secundária(canto superior direito)
+    int linhaD2 = 1 , colunaD2 = 8;
+    for (int i = 0; i < TAM_NAVIO; i++){
+        if (linhaD2 + i < TAMANHO && colunaD2 - i >= 0){
+            tabuleiro[linhaD2 + i] [colunaD2 - i] = 3;
+        }
+    } 
 
-    // 4. Exibir o tabuleiro
+    // 6. Exibir o tabuleiro
     printf("\n  TABULEIRO BATALHA NAVAL\n\n");
 
     // Imprimir a matriz com letras colunas (A-J)
